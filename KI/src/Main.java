@@ -3,7 +3,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        //System.out.println(sumOfSquares(new double[] { 1., 2., 3. }));
+        System.out.println(sumOfSquares(new double[] { 1., 2., 3. }));
         //System.out.println(sumOfColOne(new double[][] {}));
         //System.out.println(sumOfColOne(new double[][] { { 1., 2. }, { 1., 2. }, { 1., 2. } }));
         //System.out.println(sumOfRow2(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } }));
