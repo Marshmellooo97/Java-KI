@@ -16,7 +16,6 @@ public class Main {
             for (int j = 0; j < x[0].length; j++) {
                 erg = erg + x[i][j];
             }
-
         }
         return erg;
     }
