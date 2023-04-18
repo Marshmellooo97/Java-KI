@@ -1,5 +1,7 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -7,8 +9,31 @@ public class Main {
         //System.out.println(sumOfColOne(new double[][] {}));
         //System.out.println(sumOfColOne(new double[][] { { 1., 2. }, { 1., 2. }, { 1., 2. } }));
         //System.out.println(sumOfRow2(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } }));
-        System.out.println(sumOfMatrix(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } }));
+        //System.out.println(sumOfMatrix(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } }));
+        //System.out.println(Arrays.deepToString(modelExample(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } })));
+        System.out.println(Arrays.deepToString(modelExample(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } })));
 
+    }
+    public static double[][] modelExample(double[][] x){
+        double[][] m = new double[x.length][1];
+        double erg = 0;
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x[0].length; j++) {
+               erg = erg + x[i][j];
+            }
+            m[i][0] = erg;
+            erg = 0;
+        }
+        return  m;
+    }
+
+    public static double[][] modelExample1(double[][] x){
+        double[][] m = new double[x.length][1];
+        double erg = 0;
+        for (int i = 0; i < x.length; i++) {
+            m[i][0] = x[i][0];
+        }
+        return m;
     }
     public static double sumOfMatrix(double[][] x){
         double erg = 0;
