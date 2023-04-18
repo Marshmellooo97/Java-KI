@@ -14,17 +14,17 @@ public class Main {
         //System.out.println(Arrays.deepToString(modelExample(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } })));
         System.out.println(Arrays.deepToString(linearClassifier(new double[][] { { 1., 1. }, { 2., 2. }, { 3., 3. } }, new double[] { 1.0, 0.0 })));
     }
+
     public static double[][] linearClassifier(double[][] x, double[] w){
-        double[][] m = new double[x.length][1];
-        double erg = 0;
-        for (int i = 0; i < x.length; i++) {
-            for (int j = 0; j < x[0].length; j++) {
-                erg = erg + x[i][j];
+        double[][] result = new double[x.length][1];
+        for (int row = 0; row < x.length; row++) {
+            double sum = 0;
+            for (int col = 0; col < x[0].length; col++) {
+                sum += x[row][col] * w[col];
             }
-            m[i][0] = erg;
-            erg = 0;
+            result[row][0] = sum;
         }
-        return  m;
+        return result;
     }
     public static double[][] modelExample(double[][] x){
         double[][] erg = new double[1][x[0].length];
