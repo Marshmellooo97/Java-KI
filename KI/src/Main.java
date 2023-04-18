@@ -11,10 +11,34 @@ public class Main {
         //System.out.println(sumOfRow2(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } }));
         //System.out.println(sumOfMatrix(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } }));
         //System.out.println(Arrays.deepToString(modelExample(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } })));
-        System.out.println(Arrays.deepToString(modelExample(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } })));
-
+        //System.out.println(Arrays.deepToString(modelExample(new double[][] { { 1., 1., 1. }, { 2., 2., 2. }, { 3., 3., 3. } })));
+        System.out.println(Arrays.deepToString(linearClassifier(new double[][] { { 1., 1. }, { 2., 2. }, { 3., 3. } }, new double[] { 1.0, 0.0 })));
+    }
+    public static double[][] linearClassifier(double[][] x, double[] w){
+        double[][] m = new double[x.length][1];
+        double erg = 0;
+        for (int i = 0; i < x.length; i++) {
+            for (int j = 0; j < x[0].length; j++) {
+                erg = erg + x[i][j];
+            }
+            m[i][0] = erg;
+            erg = 0;
+        }
+        return  m;
     }
     public static double[][] modelExample(double[][] x){
+        double[][] erg = new double[1][x[0].length];
+
+        for (int col = 0; col < x[0].length; col++) {
+            double sum = 0;
+            for (int row = 0; row < x.length; row++) {
+                sum += x[row][col];
+            }
+            erg[0][col] = sum;
+        }
+        return erg;
+    }
+    public static double[][] modelExample2(double[][] x){
         double[][] m = new double[x.length][1];
         double erg = 0;
         for (int i = 0; i < x.length; i++) {
